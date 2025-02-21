@@ -1,0 +1,76 @@
+@import url("accueil.css");
+
+/* Contenu principal */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-left: 25px; /* Décale le contenu des bâtiments */
+}
+
+/* Conteneur des bâtiments */
+.construction-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cartes des bâtiments */
+.building {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 80%;  /* Réduit la largeur pour ne pas toucher le menu */
+    max-width: 800px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-left: 50px; /* Décalage supplémentaire */
+}
+
+/* Images des bâtiments */
+.building img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* Informations du bâtiment */
+.building-info {
+    flex: 1;
+    text-align: left;
+}
+
+/* Titres */
+.building-info h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Paragraphes */
+.building-info p {
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+/* Style du bouton */
+.upgrade-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.upgrade-button:hover {
+    background-color: #c0392b;
+}

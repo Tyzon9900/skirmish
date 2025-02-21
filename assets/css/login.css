@@ -1,0 +1,84 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: darken;
+    color: white;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+/* Évite que les champs dépassent */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #3a3a5a;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box; /* Ajoute cette ligne */
+}
+
+/* Empêche les éléments de dépasser */
+.container {
+    max-width: 400px;
+    min-width: 300px; /* Évite une réduction excessive */
+    width: 90%;
+    padding: 30px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #5a5af0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3a3af0;
+}
+
+/* Liens */
+a {
+    color: #5a5af0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Messages d'erreur */
+.error {
+    color: #ff6666;
+    background: #330000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.success {
+    color: #55fa5a;
+    background: #002d08;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input:focus {
+    border: 2px solid #5a5af0;
+    background: #2a2a4a;
+}
