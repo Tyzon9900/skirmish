@@ -1,0 +1,32 @@
+.resource-bar {
+    position: fixed;
+    top: 0;
+    left: 60%; /* Augmente légèrement pour déplacer vers la droite */
+    transform: translateX(-45%); /* Ajuste pour recentrer après déplacement */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 40%;
+    max-width: 700px;
+    justify-content: space-evenly;
+}
+
+
+.resource {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; /* Empêche les nombres de passer à la ligne */
+}
+
+.resource img {
+    width: 28px;
+    height: 28px;
+}

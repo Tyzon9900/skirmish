@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="stylesheet" href="../assets/css/accueil.css">
+    <link rel="stylesheet" href="assets/css/resource.css">
 </head>
 <body>
+<?php include '../includes/header.php'; ?>
     <div class="container">
         <!-- Menu latéral -->
         <nav class="sidebar">
