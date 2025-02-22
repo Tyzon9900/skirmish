@@ -60,25 +60,30 @@ if (!$resources) {
 
 <script>
     function updateResources() {
-        fetch("../includes/get_resources.php")
+        // Étape 1 : Mettre à jour les ressources en appelant update_resources.php
+        fetch("../includes/update_resources.php")
         .then(response => response.json())
         .then(data => {
-            if (data.error) {
-                console.error("Erreur lors de la mise à jour des ressources :", data.error);
-                return;
+            if (data.status === "ok") {
+                // Étape 2 : Après la mise à jour, récupérer les nouvelles valeurs
+                return fetch("../includes/get_resources.php");
             }
-
-            document.querySelector("#wood-count").textContent = data.wood;
-            document.querySelector("#stone-count").textContent = data.stone;
-            document.querySelector("#iron-count").textContent = data.iron;
-            document.querySelector("#gold-count").textContent = data.gold;
-            document.querySelector("#wheat-count").textContent = data.wheat;
         })
-        .catch(error => console.error("Erreur Fetch :", error));
+        .then(response => response.json())
+        .then(data => {
+            if (data) {
+                document.querySelector("#wood-count").textContent = data.wood;
+                document.querySelector("#stone-count").textContent = data.stone;
+                document.querySelector("#iron-count").textContent = data.iron;
+                document.querySelector("#gold-count").textContent = data.gold;
+                document.querySelector("#wheat-count").textContent = data.wheat;
+            }
+        })
+        .catch(error => console.error("Erreur de mise à jour des ressources:", error));
     }
 
-    setInterval(updateResources, 3000); // Mise à jour toutes les 3 secondes
+    // Appel de la mise à jour toutes les 3 secondes
+    setInterval(updateResources, 3000);
 </script>
-
 </body>
 </html>

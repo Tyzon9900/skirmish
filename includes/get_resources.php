@@ -1,27 +1,17 @@
 <?php
-session_start();
-require 'database.php'; // Vérifie que la connexion à la BDD est correcte
+require 'database.php';
+require 'update_resources.php'; // Assurer la mise à jour avant de renvoyer les données
 
-// Vérifie que l'utilisateur est bien connecté
+session_start();
 if (!isset($_SESSION['user_id'])) {
-    echo json_encode(["error" => "Utilisateur non connecté"]);
-    exit;
+    die(json_encode(["error" => "Utilisateur non connecté"]));
 }
 
 $user_id = $_SESSION['user_id'];
 
-// Récupérer les ressources de l'utilisateur
-$query = "SELECT wood, stone, iron, gold, wheat FROM users WHERE id = ?";
-$stmt = $pdo->prepare($query);
+$stmt = $pdo->prepare("SELECT wood, stone, iron, gold, wheat FROM users WHERE id = ?");
 $stmt->execute([$user_id]);
 $resources = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if (!$resources) {
-    echo json_encode(["error" => "Aucune ressource trouvée"]);
-    exit;
-}
-
-// Retourne les ressources en format JSON
-header('Content-Type: application/json');
 echo json_encode($resources);
 ?>
